@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro Medico Preite — Odontoiatria e medicina estetica a Pescara</title>
+  <meta name="description" content="Odontoiatria, igiene dentale e medicina estetica a Pescara: trattamenti su misura eseguiti da medici e odontoiatri, con la sicurezza della scienza." />
+
+  <!-- Anteprima dei link condivisi (WhatsApp, Facebook, LinkedIn, X…).
+       Gli indirizzi devono essere assoluti: aggiornarli se il dominio definitivo è diverso. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Centro Medico Preite" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:url" content="https://www.centromedicopreite.com/" />
+  <meta property="og:title" content="Centro Medico Preite — Odontoiatria e medicina estetica a Pescara" />
+  <meta property="og:description" content="Odontoiatria, igiene dentale e medicina estetica in Via Firenze 104, Pescara. Prenota una visita online." />
+  <meta property="og:image" content="https://www.centromedicopreite.com/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo del Centro Medico Preite su sfondo di nuvole e molecole: odontoiatria e medicina estetica, Via Firenze 104, Pescara" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.centromedicopreite.com/" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalClinic", "Dentist"],
+    "name": "Centro Medico Preite",
+    "url": "https://www.centromedicopreite.com/",
+    "logo": "https://www.centromedicopreite.com/assets/logo-preite.png",
+    "image": "https://www.centromedicopreite.com/assets/og-image.jpg",
+    "description": "Odontoiatria, igiene dentale e medicina estetica a Pescara.",
+    "telephone": "+393332952935",
+    "email": "richieste@centromedicopreite.com",
+    "vatID": "IT01301970685",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Firenze, 104",
+      "addressLocality": "Pescara",
+      "addressRegion": "PE",
+      "postalCode": "65122",
+      "addressCountry": "IT"
+    }
+  }
+  </script>
+  <link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <!-- sfondo a puntini che reagisce al cursore (sezioni chiare) -->
+  <canvas class="dots-bg" id="dotsBg" aria-hidden="true"></canvas>
+
+  <a class="skip" href="#main">Vai al contenuto</a>
+
+  <!-- ===== Barra in alto (fissa) ===== -->
+  <header class="nav" id="siteHeader">
+    <a href="#top" class="nav__logo" aria-label="Centro Medico Preite — torna all'inizio">
+      <img src="assets/logo-preite.png" alt="Centro Medico Preite" width="352" height="118" />
+    </a>
+
+    <button class="nav__video" id="videoToggle" aria-pressed="false" aria-label="Metti in pausa il video">
+      <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+      <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+    </button>
+
+    <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="menu" aria-label="Apri menu">
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav__menu" id="menu" aria-label="Menu principale">
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#trattamenti">Trattamenti</a>
+      <a href="#metodo">Il metodo</a>
+      <a href="#contatti">Contatti</a>
+      <a href="#" data-open="book" class="nav__cta">Prenota una visita</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ===== 0. Hero ===== -->
+    <section class="hero" id="top">
+      <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto"
+             poster="assets/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/hero-video.mp4" type="video/mp4" />
+      </video>
+      <canvas class="hero__smoke" id="smoke" aria-hidden="true"></canvas>
+
+      <div class="hero__content">
+        <div class="hero__center">
+        <p class="hero__eyebrow reveal" style="--d:0">Centro medico polispecialistico</p>
+
+        <h1 class="hero__title" aria-label="L'arte della medicina estetica, la sicurezza della scienza.">
+          <span class="line"><span class="reveal" style="--d:1">L'arte della</span></span>
+          <span class="line"><span class="reveal" style="--d:1.5">medicina estetica,</span></span>
+          <span class="line"><span class="reveal" style="--d:2">la sicurezza</span></span>
+          <span class="line"><span class="reveal" style="--d:2.5">della scienza.</span></span>
+        </h1>
+        </div>
+
+        <div class="hero__below">
+        <div class="hero__actions reveal" style="--d:4">
+          <button class="btn btn--primary" data-open="book">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            Prenota una visita
+          </button>
+          <a href="#trattamenti" class="btn btn--light" data-glide>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
+            Scopri i trattamenti
+          </a>
+        </div>
+
+        <p class="hero__text reveal" style="--d:5">
+          Valorizziamo la tua bellezza naturale con trattamenti medici su misura, orientati
+          all'armonia, alla prevenzione e al benessere della pelle.
+        </p>
+        </div>
+      </div>
+
+      <a href="#chi-siamo" class="hero__scroll" aria-label="Scorri alla sezione successiva">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===== Divisore: nuvole tra hero e sezioni ===== -->
+    <div class="cloud-divider" aria-hidden="true"><canvas></canvas></div>
+
+    <!-- ===== 1. Zig-zag: media + testo / testo + media ===== -->
+    <section class="section zz" id="chi-siamo">
+      <div class="container">
+
+        <!-- Riga 1: media a sinistra, testo a destra -->
+        <article class="zz__row">
+          <figure class="zz__media" data-reveal-media>
+            <video class="zz__img" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+              <source src="assets/chi-siamo.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="zz__badge">
+              <strong><span data-count="20">0</span>+</strong>
+              <span>anni di esperienza<br />in medicina estetica</span>
+            </figcaption>
+          </figure>
+          <div class="zz__text">
+            <p class="eyebrow" data-reveal="left"><span>01</span> Chi siamo</p>
+            <h2 class="h2" data-reveal="clip" style="--d:1">Bellezza naturale, guidata dalla medicina.</h2>
+            <p class="lead" data-reveal style="--d:2">
+              Il Centro Medico Preite unisce l'esperienza di medici specialisti a tecnologie e
+              protocolli aggiornati, per un percorso di cura che rispetta i tuoi tratti.
+            </p>
+            <p data-reveal style="--d:3">
+              Ogni trattamento nasce da una visita approfondita: ascoltiamo le tue esigenze,
+              valutiamo la salute della pelle e costruiamo insieme un piano realistico,
+              orientato a risultati armoniosi e duraturi.
+            </p>
+            <a href="#metodo" class="link-arrow" data-glide data-reveal style="--d:4">
+              Il nostro metodo
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Righe 2 e 3: due colonne affiancate, ognuna prosegue in verticale -->
+        <div class="zz__pair">
+        <article class="zz__col" id="sicurezza">
+          <div class="zz__head">
+            <p class="eyebrow" data-reveal="left"><span>02</span> La sicurezza della scienza</p>
+            <h2 class="h2" data-reveal="clip" style="--d:1">Scelte mediche, prima che estetiche.</h2>
+          </div>
+          <div class="zz__body">
+            <p class="lead" data-reveal style="--d:2">
+              Ogni proposta parte da una diagnosi accurata e da criteri clinici condivisi,
+              perché un buon risultato estetico è prima di tutto un risultato sicuro.
+            </p>
+            <ul class="zz__list">
+              <li data-reveal style="--d:2">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+                <div><h3>Professionisti qualificati</h3><p>Medici, odontoiatri e igienisti, ognuno con una formazione specifica nel proprio ambito.</p></div>
+              </li>
+              <li data-reveal style="--d:3">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-10V3"/><path d="M7.5 14h9"/></svg>
+                <div><h3>Prodotti tracciabili</h3><p>Dispositivi e prodotti certificati, con tracciabilità di ogni lotto.</p></div>
+              </li>
+              <li data-reveal style="--d:4">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 3 5-6"/></svg>
+                <div><h3>Protocolli aggiornati</h3><p>Linee guida e letteratura scientifica alla base di ogni tecnica.</p></div>
+              </li>
+              <li data-reveal style="--d:5">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg>
+                <div><h3>Risultati naturali</h3><p>Valorizzare, mai trasformare: l'obiettivo è che tu ti riconosca.</p></div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="zz__col" id="specialisti">
+          <div class="zz__head">
+            <p class="eyebrow" data-reveal="left"><span>03</span> Specialisti</p>
+            <h2 class="h2" data-reveal="clip" style="--d:1">Un team medico dedicato a te.</h2>
+          </div>
+          <div class="zz__body">
+            <p class="lead" data-reveal style="--d:2">
+              Medicina estetica e odontoiatria sotto lo stesso tetto: medici, odontoiatri e
+              igienisti collaborano sullo stesso percorso, così ogni scelta tiene conto
+              della tua salute nel suo insieme.
+            </p>
+            <ul class="team" id="team" aria-label="Il nostro team"></ul>
+            <div data-reveal style="--d:4">
+              <button class="btn btn--outline" data-open="doctor">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                Trova il tuo specialista
+              </button>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. Trattamenti: mazzo di carte da sfogliare ===== -->
+    <section class="section treatments" id="trattamenti">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-reveal="left"><span>04</span> Trattamenti</p>
+            <h2 class="h2" data-reveal="clip" style="--d:1">Trattamenti su misura</h2>
+          </div>
+          <!-- due gruppi di trattamenti; i filtri sotto cambiano in base al gruppo scelto (script.js) -->
+          <div class="treat-nav" data-reveal style="--d:2">
+            <div class="groups" role="group" aria-label="Area dei trattamenti">
+              <span class="groups__pill" aria-hidden="true"></span>
+              <button class="group" type="button" data-group="odontoiatria" aria-pressed="true">Odontoiatria</button>
+              <button class="group" type="button" data-group="estetica" aria-pressed="false">Medicina estetica</button>
+            </div>
+            <div class="filters" id="filters" role="group" aria-label="Filtra trattamenti"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deck is-stacked" id="deck" tabindex="0" role="region" aria-roledescription="carosello"
+           aria-label="Trattamenti: usa le frecce per sfogliare, Invio per girare la carta">
+        <ul class="deck__cards" id="deckCards">
+          <!-- ===== Odontoiatria ===== -->
+          <li class="tcard" data-group="odontoiatria" data-category="prevenzione" data-speciality="Igiene dentale">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Prevenzione</span></div>
+                <h3>Igiene orale professionale</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Rimozione di placca e tartaro, lucidatura e consigli personalizzati per l'igiene di tutti i giorni.</p>
+                <p class="tcard__meta">Durata 45–60 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="odontoiatria" data-category="prevenzione" data-speciality="Odontoiatria">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Prevenzione</span></div>
+                <h3>Parodontologia</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Cura di gengive infiammate e tasche parodontali, per proteggere i tessuti che sostengono i denti.</p>
+                <p class="tcard__meta">Durata 45–60 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="odontoiatria" data-category="cure" data-speciality="Odontoiatria">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Cure</span></div>
+                <h3>Conservativa</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Cura della carie e ricostruzione del dente con materiali estetici dello stesso colore dello smalto.</p>
+                <p class="tcard__meta">Durata 30–60 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="odontoiatria" data-category="cure" data-speciality="Odontoiatria">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Cure</span></div>
+                <h3>Endodonzia</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Cura dei canali radicolari (devitalizzazione) per salvare il dente naturale ed eliminare il dolore.</p>
+                <p class="tcard__meta">Durata 60–90 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="odontoiatria" data-category="estetica" data-speciality="Odontoiatria">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Estetica</span></div>
+                <h3>Sbiancamento dentale</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Schiarisce il colore dei denti in modo graduale e controllato, dopo aver valutato lo stato dello smalto.</p>
+                <p class="tcard__meta">Durata 60 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="odontoiatria" data-category="estetica" data-speciality="Odontoiatria">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Estetica</span></div>
+                <h3>Faccette estetiche</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Sottili lamine in ceramica o composito che migliorano forma, colore e allineamento dei denti frontali.</p>
+                <p class="tcard__meta">Più sedute</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="odontoiatria" data-category="impianti" data-speciality="Odontoiatria">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Impianti</span></div>
+                <h3>Implantologia</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Sostituisce i denti mancanti con impianti in titanio e corone su misura, dopo un'accurata diagnosi radiografica.</p>
+                <p class="tcard__meta">Più sedute</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="odontoiatria" data-category="ortodonzia" data-speciality="Odontoiatria">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Ortodonzia</span></div>
+                <h3>Ortodonzia invisibile</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Allineatori trasparenti su misura che correggono gradualmente la posizione dei denti, quasi senza farsi notare.</p>
+                <p class="tcard__meta">Percorso di alcuni mesi</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+
+          <!-- ===== Medicina estetica ===== -->
+          <li class="tcard" data-group="estetica" data-category="viso" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Viso</span></div>
+                <h3>Filler all'acido ialuronico</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Ripristina i volumi e definisce i contorni del viso in modo graduale, rispettando le proporzioni naturali.</p>
+                <p class="tcard__meta">Durata 30–45 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="viso" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Viso</span></div>
+                <h3>Tossina botulinica</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Attenua le rughe d'espressione di fronte e contorno occhi, mantenendo la mimica spontanea del volto.</p>
+                <p class="tcard__meta">Durata 20–30 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="viso" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Viso</span></div>
+                <h3>Biorivitalizzazione</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Microiniezioni di principi attivi che idratano in profondità e restituiscono luminosità e compattezza.</p>
+                <p class="tcard__meta">Durata 30 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="pelle" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Pelle</span></div>
+                <h3>Peeling chimico</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Rinnova lo strato superficiale della pelle per uniformare tono e texture e ridurre le imperfezioni.</p>
+                <p class="tcard__meta">Durata 30 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="pelle" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Pelle</span></div>
+                <h3>Laser per macchie e discromie</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Tratta le macchie cutanee in modo mirato, dopo una valutazione dermatologica del tipo di pelle.</p>
+                <p class="tcard__meta">Durata 20–40 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="pelle" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Pelle</span></div>
+                <h3>Trattamento di acne ed esiti</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Protocolli combinati per ridurre l'infiammazione e migliorare la texture della pelle nel tempo.</p>
+                <p class="tcard__meta">Durata 30 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="corpo" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Corpo</span></div>
+                <h3>Carbossiterapia</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Favorisce la microcircolazione e il tono dei tessuti in caso di cellulite e adiposità localizzate.</p>
+                <p class="tcard__meta">Durata 20–30 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="corpo" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Corpo</span></div>
+                <h3>Scleroterapia</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Trattamento dei capillari e delle piccole vene visibili degli arti inferiori, previa visita angiologica.</p>
+                <p class="tcard__meta">Durata 30 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="corpo" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Corpo</span></div>
+                <h3>Epilazione laser</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Riduzione progressiva dei peli superflui con parametri personalizzati sul fototipo.</p>
+                <p class="tcard__meta">Durata 15–60 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="benessere" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Benessere</span></div>
+                <h3>Consulenza nutrizionale</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Un piano alimentare personalizzato che sostiene la salute della pelle e il benessere generale.</p>
+                <p class="tcard__meta">Durata 45–60 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+          <li class="tcard" data-group="estetica" data-category="benessere" data-speciality="Medicina estetica">
+            <div class="tcard__inner">
+              <div class="tcard__face tcard__front">
+                <div class="tcard__top"><span class="tcard__num"></span><span class="tcard__tag">Benessere</span></div>
+                <h3>Check-up della pelle</h3>
+                <span class="tcard__hint">Tocca per scoprire</span>
+              </div>
+              <div class="tcard__face tcard__back">
+                <p>Valutazione dermatologica completa con analisi dello stato cutaneo, per impostare il percorso più adatto.</p>
+                <p class="tcard__meta">Durata 30 min</p>
+                <button type="button" class="btn btn--glass-light tcard__book">Prenota questo trattamento</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container deck__controls" data-reveal style="--d:3">
+        <button class="deck__arrow" id="deckPrev" type="button" aria-label="Trattamento precedente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="deck__status">
+          <p class="deck__count" aria-live="polite"><span id="deckIndex">01</span> / <span id="deckTotal">12</span></p>
+          <div class="deck__bar"><span id="deckBar"></span></div>        </div>
+        <button class="deck__arrow" id="deckNext" type="button" aria-label="Trattamento successivo">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Divisore di nuvole tra trattamenti (chiaro) e metodo (scuro) -->
+    <div class="cloud-divider cloud-divider--mid cloud-divider--flip" aria-hidden="true"><canvas></canvas></div>
+
+    <!-- ===== 3. Il metodo: mappa che scorre in orizzontale ===== -->
+    <section class="method" id="metodo">
+      <div class="method__sticky">
+        <div class="container method__head">
+          <div>
+            <p class="eyebrow eyebrow--light" data-reveal="left"><span>05</span> Il metodo</p>
+            <h2 class="h2 h2--light" data-reveal="clip" style="--d:1">Un percorso, non un singolo trattamento.</h2>
+          </div>
+          <p class="method__stage" data-reveal="right" style="--d:2" aria-live="polite">Tappa <strong id="stageNow">1</strong> di <span id="stageTotal">5</span></p>
+        </div>
+
+        <div class="method__viewport">
+          <!-- grafico "in crescita" (barre luminose, linea a zig-zag che sale, freccia finale):
+               disegnato su un canvas grande quanto lo schermo, non su tutta la mappa -->
+          <canvas class="map-canvas" id="mapCanvas" aria-hidden="true"></canvas>
+          <div class="method__track" id="methodTrack">
+
+            <span class="map__label map__label--start" id="mapStart">Partenza</span>
+            <span class="map__label map__label--end" id="mapEnd">Risultati naturali</span>
+
+            <ol class="stops" id="stops">
+              <li class="stop">
+                <span class="stop__drop" aria-hidden="true"></span>
+                <span class="stop__pin" aria-hidden="true"></span>
+                <div class="stop__card">
+                  <span class="stop__num">01</span>
+                  <h3>Consulenza e ascolto</h3>
+                  <p>Parliamo dei tuoi obiettivi, delle aspettative e della tua storia clinica, senza fretta.</p>
+                </div>
+              </li>
+              <li class="stop">
+                <span class="stop__drop" aria-hidden="true"></span>
+                <span class="stop__pin" aria-hidden="true"></span>
+                <div class="stop__card">
+                  <span class="stop__num">02</span>
+                  <h3>Valutazione medica</h3>
+                  <p>Il medico analizza pelle e tessuti e verifica eventuali controindicazioni.</p>
+                </div>
+              </li>
+              <li class="stop">
+                <span class="stop__drop" aria-hidden="true"></span>
+                <span class="stop__pin" aria-hidden="true"></span>
+                <div class="stop__card">
+                  <span class="stop__num">03</span>
+                  <h3>Piano personalizzato</h3>
+                  <p>Un programma chiaro: trattamenti indicati, numero di sedute, tempi e costi.</p>
+                </div>
+              </li>
+              <li class="stop">
+                <span class="stop__drop" aria-hidden="true"></span>
+                <span class="stop__pin" aria-hidden="true"></span>
+                <div class="stop__card">
+                  <span class="stop__num">04</span>
+                  <h3>Trattamento</h3>
+                  <p>Eseguito dal medico in ambulatorio, con indicazioni scritte per i giorni successivi.</p>
+                </div>
+              </li>
+              <li class="stop">
+                <span class="stop__drop" aria-hidden="true"></span>
+                <span class="stop__pin" aria-hidden="true"></span>
+                <div class="stop__card">
+                  <span class="stop__num">05</span>
+                  <h3>Follow-up</h3>
+                  <p>Controlli programmati per verificare i risultati e mantenerli nel tempo.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <!-- punta luminosa che avanza sulla linea -->
+          <div class="map-walker" id="mapWalker" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divisore di nuvole tra metodo (scuro) e contatti (chiaro) -->
+    <div class="cloud-divider cloud-divider--mid" aria-hidden="true"><canvas></canvas></div>
+
+    <!-- ===== 4. Prenota la tua consulenza ===== -->
+    <section class="section contact" id="contatti">
+      <div class="container contact__grid">
+        <div class="contact__info" data-reveal="left">
+          <p class="eyebrow eyebrow--light"><span>06</span> Contatti</p>
+          <h2 class="h2 h2--light">Prenota la tua consulenza.</h2>
+          <ul class="contact__list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.4-6-11a6 6 0 0 1 12 0c0 5.6-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+              <div><span>Indirizzo</span><p><a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Firenze+104+65122+Pescara" target="_blank" rel="noopener">Via Firenze, 104, 65122 Pescara PE</a></p></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              <div><span>Telefono</span><p><a href="tel:+393332952935">333 295 2935</a></p></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <div><span>Email</span><p><a href="mailto:richieste@centromedicopreite.com">richieste@centromedicopreite.com</a></p></div>
+            </li>
+          </ul>
+          <button class="btn btn--glass-light" data-open="book">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            Prenota online
+          </button>
+        </div>
+
+        <div class="contact__form" data-reveal="right" style="--d:2">
+          <!-- inviato a invia.php, che lo spedisce a richieste@centromedicopreite.com -->
+          <form id="contactForm" action="invia.php" method="post" novalidate>
+            <h3 class="contact__title">Scrivici un messaggio</h3>
+            <input type="hidden" name="tipo" value="contatto" />
+            <label>Nome e cognome
+              <input type="text" name="name" required maxlength="80" autocomplete="name" placeholder="Mario Rossi" />
+            </label>
+            <div class="form__row">
+              <label>Email
+                <input type="email" name="email" maxlength="120" autocomplete="email" placeholder="mario@email.it" />
+              </label>
+              <label>Telefono
+                <input type="tel" name="phone" maxlength="20" autocomplete="tel" placeholder="+39 …" />
+              </label>
+            </div>
+            <p class="form__hint">Indica almeno uno dei due recapiti, così possiamo ricontattarti.</p>
+            <label>Messaggio
+              <textarea name="message" rows="5" required maxlength="1000" placeholder="Ad esempio: costi, disponibilità, informazioni su un trattamento…"></textarea>
+            </label>
+            <!-- campo trappola per lo spam: invisibile alle persone -->
+            <label class="hp" aria-hidden="true">Sito web <input type="text" name="sito_web" tabindex="-1" autocomplete="off" /></label>
+            <label class="check-row">
+              <input type="checkbox" name="privacy" required />
+              <span>Ho preso visione dell'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.</span>
+            </label>
+            <p class="form__error" id="contactError" role="alert"></p>
+            <button type="submit" class="btn btn--primary btn--block">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-4 16-4-7-8-1z"/><path d="m12 13 8-9"/></svg>
+              Invia messaggio
+            </button>
+          </form>
+          <div class="contact__success" id="contactSuccess" hidden>
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></div>
+            <h3>Messaggio inviato</h3>
+            <p id="contactSuccessText"></p>
+            <button type="button" class="btn btn--outline" id="contactReset">Scrivi un altro messaggio</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 5. Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand" data-reveal>
+        <img src="assets/logo-preite.png" alt="Centro Medico Preite" width="352" height="118" />
+        <p>Medicina estetica e benessere della pelle, con l'attenzione e la sicurezza di un centro medico.</p>
+      </div>
+      <nav aria-label="Link del sito" data-reveal style="--d:1">
+        <h3>Il centro</h3>
+        <ul>
+          <li><a href="#chi-siamo">Chi siamo</a></li>
+          <li><a href="#sicurezza">Sicurezza</a></li>
+          <li><a href="#specialisti">Specialisti</a></li>
+          <li><a href="#metodo">Il metodo</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Trattamenti" data-reveal style="--d:2">
+        <h3>Trattamenti</h3>
+        <ul>
+          <li><a href="#trattamenti" data-filter-link="odontoiatria">Odontoiatria</a></li>
+          <li><a href="#trattamenti" data-filter-link="odontoiatria/prevenzione">Igiene e prevenzione</a></li>
+          <li><a href="#trattamenti" data-filter-link="estetica">Medicina estetica</a></li>
+          <li><a href="#trattamenti" data-filter-link="estetica/viso">Estetica del viso</a></li>
+        </ul>
+      </nav>
+      <div data-reveal style="--d:3">
+        <h3>Contatti</h3>
+        <ul>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Firenze+104+65122+Pescara" target="_blank" rel="noopener">Via Firenze, 104, 65122 Pescara PE</a></li>
+          <li><a href="tel:+393332952935">333 295 2935</a></li>
+          <li><a href="mailto:richieste@centromedicopreite.com">richieste@centromedicopreite.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom" data-reveal style="--d:4">
+      <p>© <span id="year">2026</span> Centro Medico Preite · Dott. Umberto Preite · P.IVA 01301970685</p>
+      <p>
+        <a href="privacy.html">Privacy policy</a> · <a href="cookie.html">Cookie policy</a> ·        <button type="button" class="linklike" data-cookie-prefs>Preferenze cookie</button>
+      </p>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" id="toTop" aria-label="Torna all'inizio">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </a>
+
+  <!-- ===== Modale: prenotazione ===== -->
+  <dialog class="modal" id="bookModal" aria-labelledby="bookTitle">
+    <button class="modal__close" data-close aria-label="Chiudi">&times;</button>
+    <div class="modal__body" id="bookForm">
+      <p class="modal__eyebrow">Richiesta di visita</p>
+      <h2 id="bookTitle">Prenota una visita</h2>
+      <!-- inviato a invia.php, che lo spedisce a richieste@centromedicopreite.com -->
+      <form id="bookingForm" action="invia.php" method="post" novalidate>
+        <input type="hidden" name="tipo" value="visita" />
+        <label>Nome e cognome
+          <input type="text" name="name" required maxlength="80" autocomplete="name" placeholder="Mario Rossi" />
+        </label>
+        <div class="form__row">
+          <label>Email
+            <input type="email" name="email" maxlength="120" autocomplete="email" placeholder="mario@email.it" />
+          </label>
+          <label>Telefono
+            <input type="tel" name="phone" maxlength="20" autocomplete="tel" placeholder="+39 …" />
+          </label>
+        </div>
+        <p class="form__hint">Indica almeno uno dei due recapiti, così possiamo confermarti l'appuntamento.</p>
+        <div class="form__row">
+          <label>Area
+            <select name="speciality" id="specialitySelect" required>
+              <option value="">Seleziona…</option>
+            </select>
+          </label>
+          <label>Giorno preferito
+            <input type="date" name="date" id="dateInput" required aria-describedby="dateHint" />
+          </label>
+        </div>
+        <p class="form__hint" id="dateHint">Il centro è chiuso la domenica.</p>
+        <label>Professionista <span class="muted">(facoltativo)</span>
+          <select name="doctor" id="doctorSelect">
+            <option value="">Qualsiasi professionista disponibile</option>
+          </select>
+        </label>
+        <label>Trattamento di interesse <span class="muted">(facoltativo)</span>
+          <select name="treatment" id="treatmentSelect">
+            <option value="">Da definire con il medico</option>
+          </select>
+        </label>
+        <label class="hp" aria-hidden="true">Sito web <input type="text" name="sito_web" tabindex="-1" autocomplete="off" /></label>
+        <label class="check-row">
+          <input type="checkbox" name="privacy" required />
+          <span>Ho preso visione dell'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.</span>
+        </label>
+        <p class="form__error" id="formError" role="alert"></p>
+        <button type="submit" class="btn btn--primary btn--block">Invia la richiesta</button>
+      </form>
+    </div>
+    <div class="modal__body modal__success" id="bookSuccess" hidden>
+      <div class="check" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>
+      </div>
+      <h2>Richiesta inviata</h2>
+      <p id="successText"></p>
+      <button class="btn btn--light btn--block" data-close>Fatto</button>
+    </div>
+  </dialog>
+
+  <!-- ===== Modale: trova un medico ===== -->
+  <dialog class="modal modal--wide" id="doctorModal" aria-labelledby="doctorTitle">
+    <button class="modal__close" data-close aria-label="Chiudi">&times;</button>
+    <div class="modal__body">
+      <p class="modal__eyebrow">I nostri specialisti</p>
+      <h2 id="doctorTitle">Trova un medico</h2>
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="doctorSearch" placeholder="Cerca per nome o specialità" aria-label="Cerca medico" />
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filtra per specialità"></div>
+      <ul class="doctors" id="doctorList"></ul>
+      <p class="doctors__empty" id="noResults" hidden>Nessun medico corrisponde alla ricerca.</p>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+  <script src="cookie-consent.js"></script>
+</body>
+</html>

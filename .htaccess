@@ -1,0 +1,19 @@
+# Pagina mostrata quando un indirizzo del sito non esiste
+ErrorDocument 404 /404.html
+
+# Niente elenco dei file di una cartella
+Options -Indexes
+
+# Cartelle e file nascosti (.limiti-invio, .claude…) non raggiungibili dal web
+RedirectMatch 404 /\.(?!well-known)
+
+# Regole di sicurezza per il browser
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=2592000"
+  # lo sha256 autorizza l'unico script scritto dentro index.html: se si cambia quella riga, va ricalcolato
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-WZRJfWvsnNCPcxzZwvyhovnZGqhZaC+8gPGPRbx6wTk='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+</IfModule>
